@@ -1,26 +1,17 @@
 package edu.gonzaga;
 
-import javax.swing.plaf.synth.SynthMenuBarUI;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.LocalDateTime;
 
-import java.util.ArrayList;
-import java.util.Date;
-
-
+// *************************************************************
 class Person {
     private Integer yearBorn;
-
 
     public Person(Integer yearBorn) {
         this.yearBorn = yearBorn;
     }
 
     public Integer getAge_years() {
-
         LocalDate dateNow = LocalDate.now();
-
         Integer currYear = dateNow.getYear();
         Integer personAge_years = currYear - yearBorn;
 
@@ -163,5 +154,25 @@ class Box<T> {
         box2.set("I'm a box of String!");
         System.out.println(box2);
 
+    }
+}
+
+
+// ***************************************************************
+abstract class Vehicle {
+    abstract Integer getCost();
+}
+
+abstract class Car extends Vehicle {
+    abstract void drive();
+}
+
+class AstonMartin extends Car {
+    public Integer getCost() {
+        return 100000;
+    }
+
+    public void drive() {
+        System.out.println("Vroom! Vroom!");
     }
 }
