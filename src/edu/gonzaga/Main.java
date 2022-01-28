@@ -1,6 +1,7 @@
 package edu.gonzaga;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 // *************************************************************
 class Person {
@@ -22,13 +23,15 @@ class Person {
 
 // **************************************************************
 class Student extends Person {
+    private double gpa;
     public Student(Integer studentYearBorn) {
         super(studentYearBorn);
+        gpa = 3.0;
     }
 
     @Override
     public String toString() {
-        return "Student is " + getAge_years() + " years old!";
+        return "Student is " + getAge_years() + " years old! And their gpa is: " + this.gpa;
     }
 }
 
@@ -58,9 +61,6 @@ public class Main {
 
         Person p = new Person(1985);
         System.out.println("Person's age: " + p.getAge_years());
-
-        /*
-
         Person p1980 = new Person(1980);
 
         Student s1990 = new Student(1760);
@@ -87,7 +87,6 @@ public class Main {
             System.out.println(currP);
         }
 
-         */
     }
 }
 
